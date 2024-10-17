@@ -6,15 +6,18 @@
   - [Hypothesis testing](#hypothesis-testing)
     - [Two sided means](#two-sided-means)
     - [One sided means](#one-sided-means)
-    - [Two sided beta](#two-sided-beta)
+    - [Two sided beta (both univaraite and multivariate)](#two-sided-beta-both-univaraite-and-multivariate)
     - [Difference in means](#difference-in-means)
+    - [Joint hypothesis test](#joint-hypothesis-test)
+    - [Testin gsingle restrictions on multiple coefficients](#testin-gsingle-restrictions-on-multiple-coefficients)
   - [Confidence interval](#confidence-interval)
     - [bar(y)](#bary)
-    - [beta](#beta)
+    - [beta (both univaraite and multivariate)](#beta-both-univaraite-and-multivariate)
   - [Confidence intervals](#confidence-intervals)
   - [Measures of Fit and their relations](#measures-of-fit-and-their-relations)
     - [The variables](#the-variables)
     - [Meassures of Fit relationships](#meassures-of-fit-relationships)
+  - [Ideally worded interpretations](#ideally-worded-interpretations)
 - [Förl 2](#förl-2)
   - [Basics](#basics-1)
   - [Means](#means)
@@ -40,6 +43,20 @@
   - [Bias of beta](#bias-of-beta)
   - [Hypothesis testing on beta](#hypothesis-testing-on-beta)
   - [Confidence interval](#confidence-interval-2)
+  - [Homo vs heteroskedaticity](#homo-vs-heteroskedaticity)
+  - [OLS assumptions](#ols-assumptions)
+- [Förl 8](#förl-8)
+  - [Omitted variable bias](#omitted-variable-bias)
+  - [Multivariate model](#multivariate-model)
+  - [Measures of fit](#measures-of-fit)
+  - [Hypothesis test](#hypothesis-test)
+- [Förl 9](#förl-9)
+  - [Omitted variable bias](#omitted-variable-bias-1)
+- [Förl 10](#förl-10)
+  - [Hypothesis test](#hypothesis-test-1)
+    - [Single variable in multivariatea](#single-variable-in-multivariatea)
+    - [Joint hypothesis test](#joint-hypothesis-test-1)
+    - [Testin gsingle restrictions on multiple coefficients](#testin-gsingle-restrictions-on-multiple-coefficients-1)
 
 
 
@@ -53,7 +70,9 @@
 * var(X + Y) = Var(X) + Var(Y) - 2Cov(X, Y)
 
 * SD(aX + bY) = sqrt(a^2SD(X)^2 + b^2SD(Y)^2 + 2abCov
-(X, Y)???
+(X, Y)
+
+* SQRT(var(a*beta_3 + b*beta_4)) = sqrt(SE(a*beta_3)^2 + SE(b*beta_4)^2 + 2abcov(beta_3, beta_4))
 
 * Skewness = E(X - E(X))^3/SD(X)^(3)
   * Positiv skewness betyder att det är mer data till 
@@ -86,7 +105,7 @@ svansen
 
 * df = n - 1
 
-### Two sided beta
+### Two sided beta (both univaraite and multivariate)
 * H_0: beta = beta_0
 * H_A: beta != beta_0
 
@@ -105,6 +124,43 @@ svansen
 * If assume sigma_1 = sigma_2
   * df = n_1 + n_2 - 2
 
+* If assumed sigma_1 != sigma_2
+  * Seems more complicated than it should be??
+    * Welch-Satterthwaite formula
+      * Keep to the pooled version?
+
+
+
+### Joint hypothesis test
+* H_0: beta_1 = 0 and beta_2 = 0
+* H_A: beta_1 != 0 or beta_2 != 0
+
+* Interpretation:
+  * If x_1 and x_2 are two difference school resources, this test would test if the school resources matter at all.
+
+* F-statistic
+  * One only holds under homoskedasticity.
+
+* unrestricted
+  * Full model
+
+* restricted:
+  * the model under the null hypothesis
+    * For instance if we are testing if two betas might be zero, we can exclude those terms
+
+* In the homoskedastic case, F-stat is F_(q, inf)
+  * q is the number of restriction under the null hypothesis.
+  * not the the heteroskedastic cases
+    * then the upper limit is df = n - k - 1 i beleive
+
+
+### Testin gsingle restrictions on multiple coefficients
+H_0: beta_1 = beta_2
+H_1: beta_1 != beta_2
+
+df = ...?
+
+
 ## Confidence interval
 ### bar(y)
 * CI = bar(Y) +- t_val*SE(bar(Y))
@@ -114,7 +170,7 @@ svansen
 
 * df = n - 1
 
-### beta
+### beta (both univaraite and multivariate)
 * CI = hat(beta) +- t_val*SE(hat(beta))
 
 * df = n - k - 1
@@ -147,6 +203,10 @@ variance does the model
 explain
   * Given the definitions of ESS and TSS, makes full senses why R**2 is ESS/TSS
 
+* adjusted R**2
+  * Note this is strictly less than R**2
+  * Solves the issue that every time you add a regressor, there will be a better fit. Use only if multiple regressors
+
 * SER
   * The magnitude of a 
 typical regression 
@@ -167,6 +227,20 @@ of Y
   * https://en.wikipedia.org/wiki/Explained_sum_of_squares
     * SSR = ESS
       * First sentence
+
+## Ideally worded interpretations
+* Linear univariate
+  * Duh
+
+* Binary regressors
+  * Same as linear univariate
+  * However, not that off (0) is the value at intercept and on (1) is the slope value. 
+  * Slope is the differnce between the two 
+
+* Linear multivariate
+  * Holding all other independent variables, a one unit change in x will on average lead to a beta_i increases in y
+
+
 
 # Förl 2
 ## Basics
@@ -302,15 +376,73 @@ Skipped, slide 3, 4, 5, 7, 8, 9
 
 * df = n - k - 1
 
+## Homo vs heteroskedaticity
+* Heteroskedacity: variance of the error u is dependent on the independemt variable on the x axis.
+
+* **if n is large, the homo and heteroskedastic formulas coincide**
+
+* Nothing you can do about it without code. So just know the concept for the midterm
+  * well... you can use the heteroskedastic formulas but that seems awfully unlikely to happen 
 
 
+## OLS assumptions
+* Skipped, slide 25
+
+# Förl 8
+## Omitted variable bias
+Skipped, slide 3, 4, 5, 6, 7, 8, 9
+
+## Multivariate model
+Y = ...
+Y + delta(Y) = ...
+beta_i = delta(Y)/delta(X_i)
+
+## Measures of fit
+* SER, R**2 same defintiosnx
+* ajdusted R^2
+  * Solves the issue that every time you add a regressor, there will be a better fit. Use only if multiple regressors
+
+## Hypothesis test
+TODO. See lab
 
 
+# Förl 9
+## Omitted variable bias
+Skipped, whole lecture :)
 
+# Förl 10
+## Hypothesis test
+### Single variable in multivariatea
+* Same as always
+* df = n - k - 1
 
+### Joint hypothesis test
+* H_0: beta_1 = 0 and beta_2 = 0
+* H_A: beta_1 != 0 or beta_2 != 0
 
+* Interpretation:
+  * If x_1 and x_2 are two difference school resources, this test would test if the school resources matter at all.
 
+* F-statistic
+  * One only holds under homoskedasticity.
 
+* unrestricted
+  * Full model
+
+* restricted:
+  * the model under the null hypothesis
+    * For instance if we are testing if two betas might be zero, we can exclude those terms
+
+* In the homoskedastic case, F-stat is F_(q, inf)
+  * q is the number of restriction under the null hypothesis.
+  * not the the heteroskedastic cases
+    * Then the upper limit is df = n - k - 1 i beleive
+
+### Testin gsingle restrictions on multiple coefficients
+H_0: beta_1 = beta_2
+H_1: beta_1 != beta_2
+
+df = ...?
 
 
 
