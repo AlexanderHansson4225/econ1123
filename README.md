@@ -1,6 +1,6 @@
 # Table of Contents
 - [Table of Contents](#table-of-contents)
-- [Topics](#topics)
+- [Lecture content couples by topics](#lecture-content-couples-by-topics)
   - [Basics](#basics)
   - [Sample basics](#sample-basics)
   - [Hypothesis testing](#hypothesis-testing)
@@ -43,7 +43,7 @@
 
 
 
-# Topics
+# Lecture content couples by topics
 ## Basics
 * E(XY) = E(X)E(Y) + Cov(X, Y) = [independence] E(X)E
 (Y)
@@ -167,7 +167,6 @@ of Y
   * https://en.wikipedia.org/wiki/Explained_sum_of_squares
     * SSR = ESS
       * First sentence
-
 
 # Förl 2
 ## Basics
