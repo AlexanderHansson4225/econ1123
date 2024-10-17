@@ -20,3 +20,11 @@
   * Mean av smple averge av hundrre är value bar. Mer intuitivt än vad jag får det att låta.
 
 * Sample standard deviation of 100 test scores.
+
+* 5.3)
+  * 1.5 height difference. SE 0.31. Coefficient 3.94.
+  * Create a 99% for the difference btween their heights
+    * Easy to create one for a one unit difference
+      * (3.94 +- 2.58 0.31)
+        * So for a 1.5 unit change: 1.5(3.94 +- 2.58 0.31)
+  * GÖR OM DENNA FRÅGA

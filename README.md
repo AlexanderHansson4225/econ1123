@@ -3,17 +3,20 @@
 - [Lecture content couples by topics](#lecture-content-couples-by-topics)
   - [Basics](#basics)
   - [Sample basics](#sample-basics)
+  - [Binanry special case](#binanry-special-case)
   - [Hypothesis testing](#hypothesis-testing)
     - [Two sided means](#two-sided-means)
     - [One sided means](#one-sided-means)
     - [Two sided beta (both univaraite and multivariate)](#two-sided-beta-both-univaraite-and-multivariate)
     - [Difference in means](#difference-in-means)
     - [Joint hypothesis test](#joint-hypothesis-test)
+  - [p-value](#p-value)
+    - [Two sided](#two-sided)
     - [Testin gsingle restrictions on multiple coefficients](#testin-gsingle-restrictions-on-multiple-coefficients)
+    - [THeyre all well statated in the formula sheet](#theyre-all-well-statated-in-the-formula-sheet)
   - [Confidence interval](#confidence-interval)
     - [bar(y)](#bary)
     - [beta (both univaraite and multivariate)](#beta-both-univaraite-and-multivariate)
-  - [Confidence intervals](#confidence-intervals)
   - [Measures of Fit and their relations](#measures-of-fit-and-their-relations)
     - [The variables](#the-variables)
     - [Meassures of Fit relationships](#meassures-of-fit-relationships)
@@ -28,12 +31,12 @@
   - [Central Limit Theorem](#central-limit-theorem)
 - [Förl 4](#förl-4)
   - [Hypothesis testing](#hypothesis-testing-1)
-  - [p-value](#p-value)
+  - [p-value](#p-value-1)
   - [Estimator of variance Y](#estimator-of-variance-y)
 - [Förl 5](#förl-5)
   - [Confidence interval](#confidence-interval-1)
   - [Difference in means](#difference-in-means-1)
-    - [Confidence intervals](#confidence-intervals-1)
+    - [Confidence intervals](#confidence-intervals)
     - [Sample covariance and correlation](#sample-covariance-and-correlation)
 - [Förl 6](#förl-6)
   - [beta solutions](#beta-solutions)
@@ -95,12 +98,20 @@ svansen
 * r_XY = S_XY / S_X S_Y
 * s_y^2 = SUM(Y_i - bar(Y))^2/(n-1)
 
+## Binanry special case
+SE can be found:
+* beta_0 = bar(Y_m)
+* beta_1 = bar(Y_m) - bar(Y_m)
+
+From these we can find the SE and mean of beta_0 and beta_1
+
 ## Hypothesis testing
 ### Two sided means
 * H_0: μ = μ_0
 * H_A: μ != μ_0
 
 * df = n - 1
+  * On two sided, look up the 10% one sided in the normal table
 
 ### One sided means
 * H_0: μ <= μ_0
@@ -111,6 +122,8 @@ svansen
 ### Two sided beta (both univaraite and multivariate)
 * H_0: beta = beta_0
 * H_A: beta != beta_0
+
+* On two sided, look up the 2.5% one sided in the normal table
 
 * df = n - k - 1
 
@@ -131,6 +144,7 @@ svansen
   * Seems more complicated than it should be??
     * Welch-Satterthwaite formula
       * Keep to the pooled version?
+        * so persumably they wont ever ask us for df....
 
 
 
@@ -156,13 +170,17 @@ svansen
   * not the the heteroskedastic cases
     * then the upper limit is df = n - k - 1 i beleive
 
-
+## p-value
+### Two sided
+2ZNORM(-abs(t_act)) and then compare this to the confidence level
+- literally the same as for critical t but we go one way but not the other
 ### Testin gsingle restrictions on multiple coefficients
 H_0: beta_1 = beta_2
 H_1: beta_1 != beta_2
 
 df = ...?
 
+### THeyre all well statated in the formula sheet
 
 ## Confidence interval
 ### bar(y)
@@ -177,14 +195,6 @@ df = ...?
 * CI = hat(beta) +- t_val*SE(hat(beta))
 
 * df = n - k - 1
-
-## Confidence intervals
-* CI = bar(Y) +- t_val*SE(bar(Y))
-  * SE(bar(Y)) = s/sqrt(n)
-  * t_val is from t-table
-    * Note that t_val is for two sided tests
-
-* CI = hat(beta) +- t_val*SE(hat(beta))
 
 ## Measures of Fit and their relations
 ### The variables
