@@ -4,9 +4,13 @@
   - [Basics](#basics)
   - [Sample basics](#sample-basics)
   - [Hypothesis testing](#hypothesis-testing)
-    - [Two sided](#two-sided)
-    - [One sided](#one-sided)
+    - [Two sided means](#two-sided-means)
+    - [One sided means](#one-sided-means)
+    - [Two sided beta](#two-sided-beta)
     - [Difference in means](#difference-in-means)
+  - [Confidence interval](#confidence-interval)
+    - [bar(y)](#bary)
+    - [beta](#beta)
   - [Confidence intervals](#confidence-intervals)
   - [Measures of Fit and their relations](#measures-of-fit-and-their-relations)
     - [The variables](#the-variables)
@@ -24,7 +28,7 @@
   - [p-value](#p-value)
   - [Estimator of variance Y](#estimator-of-variance-y)
 - [Förl 5](#förl-5)
-  - [Confidence interval](#confidence-interval)
+  - [Confidence interval](#confidence-interval-1)
   - [Difference in means](#difference-in-means-1)
     - [Confidence intervals](#confidence-intervals-1)
     - [Sample covariance and correlation](#sample-covariance-and-correlation)
@@ -35,6 +39,7 @@
 - [Förl 7](#förl-7)
   - [Bias of beta](#bias-of-beta)
   - [Hypothesis testing on beta](#hypothesis-testing-on-beta)
+  - [Confidence interval](#confidence-interval-2)
 
 
 
@@ -69,14 +74,23 @@ svansen
 * s_y^2 = SUM(Y_i - bar(Y))^2/(n-1)
 
 ## Hypothesis testing
-### Two sided
+### Two sided means
 * H_0: μ = μ_0
 * H_A: μ != μ_0
 
-### One sided
+* df = n - 1
+
+### One sided means
 * H_0: μ <= μ_0
 * H_A: μ > μ_0
-  * One sided
+
+* df = n - 1
+
+### Two sided beta
+* H_0: beta = beta_0
+* H_A: beta != beta_0
+
+* df = n - k - 1
 
 ### Difference in means
 * H_0: μ_a - μ_b = d_0
@@ -88,11 +102,30 @@ svansen
 μ_2, s^2_1/n_1 + s^2_2/n_2)
   * Can standardize based this and perform a test
 
+* If assume sigma_1 = sigma_2
+  * df = n_1 + n_2 - 2
+
+## Confidence interval
+### bar(y)
+* CI = bar(Y) +- t_val*SE(bar(Y))
+  * SE(bar(Y)) = s/sqrt(n)
+  * t_val is from t-table
+    * Note that t_val is for two sided test
+
+* df = n - 1
+
+### beta
+* CI = hat(beta) +- t_val*SE(hat(beta))
+
+* df = n - k - 1
+
 ## Confidence intervals
 * CI = bar(Y) +- t_val*SE(bar(Y))
   * SE(bar(Y)) = s/sqrt(n)
   * t_val is from t-table
     * Note that t_val is for two sided tests
+
+* CI = hat(beta) +- t_val*SE(hat(beta))
 
 ## Measures of Fit and their relations
 ### The variables
@@ -191,13 +224,19 @@ Summing idd Y_i and then standarizing will give a N(0,1) distribution.
 * H_A: μ != μ_0
   * Two sided
 
+* df = n - 1
+
 * H_0: μ <= μ_0
 * H_A: μ > μ_0
   * One sided
 
+* df = n - 1
+
 * H_0: μ <= μ_0
 * H_A: μ != μ_0
   * One sided, and weirdly accceptable
+
+* df = n - 1
 
 ## p-value
 Skipped, slide 3, 4, 5, 7, 8, 9
@@ -213,6 +252,8 @@ Skipped, slide 3, 4, 5, 7, 8, 9
   * SE(bar(Y)) = s/sqrt(n)
   * t_val is from t-table
     * Note that t_val is for two sided test
+
+* df = n - 1
 
 ## Difference in means
 * H_0: μ_a - μ_b = d_0
@@ -250,7 +291,18 @@ Skipped, slide 3, 4, 5, 7, 8, 9
 * Skipped, slide 4
 
 ## Hypothesis testing on beta
-* 
+* H_0: beta = beta_0
+* H_A: beta != beta_0
+  * Two sided
+
+* df = n - k - 1
+
+
+## Confidence interval
+* CI = hat(beta) +- t_val*SE(hat(beta))
+
+* df = n - k - 1
+
 
 
 
