@@ -1,0 +1,8 @@
+1. Kolla slides och gör uppgifterna.
+2. Gör labbarna igen
+3. Gör midterms igen
+
+
+* Gör uppgifter i kap 4, 5 eller något?
+
+* table för ser, rss, tss, ess, tss, s_y
