@@ -8,6 +8,9 @@
     - [One sided](#one-sided)
     - [Difference in means](#difference-in-means)
   - [Confidence intervals](#confidence-intervals)
+  - [Measures of Fit and their relations](#measures-of-fit-and-their-relations)
+    - [The variables](#the-variables)
+    - [Meassures of Fit relationships](#meassures-of-fit-relationships)
 - [Förl 2](#förl-2)
   - [Basics](#basics-1)
   - [Means](#means)
@@ -24,7 +27,14 @@
   - [Confidence interval](#confidence-interval)
   - [Difference in means](#difference-in-means-1)
     - [Confidence intervals](#confidence-intervals-1)
-    - [Sample covariance](#sample-covariance)
+    - [Sample covariance and correlation](#sample-covariance-and-correlation)
+- [Förl 6](#förl-6)
+  - [beta solutions](#beta-solutions)
+  - [Meassures of Fit](#meassures-of-fit)
+  - [Assumptions](#assumptions)
+- [Förl 7](#förl-7)
+  - [Bias of beta](#bias-of-beta)
+  - [Hypothesis testing on beta](#hypothesis-testing-on-beta)
 
 
 
@@ -55,6 +65,7 @@ svansen
 
 ## Sample basics
 * S_XY = (1/n-1) SUM(X_i - bar(X)(Y_i - bar(Y)))
+* r_XY = S_XY / S_X S_Y
 * s_y^2 = SUM(Y_i - bar(Y))^2/(n-1)
 
 ## Hypothesis testing
@@ -83,6 +94,46 @@ svansen
   * t_val is from t-table
     * Note that t_val is for two sided tests
 
+## Measures of Fit and their relations
+### The variables
+* TSS
+  * Total sum of squares
+  * The toal variation of the observed data
+
+* sum of squares due to regression (SSR) or explained sum of squares (ESS) or 
+  * Explained sum of squares
+  * The amount of variation explained by the model
+
+* RSS
+  * Residual sum of squares
+  * The amount of variation not explained by the model
+
+* R^2
+  * How much of the 
+variance does the model 
+explain
+  * Given the definitions of ESS and TSS, makes full senses why R**2 is ESS/TSS
+
+* SER
+  * The magnitude of a 
+typical regression 
+residuals with the unit 
+of Y
+
+
+### Meassures of Fit relationships
+* TSS = ESS + RSS
+
+* (n-1) S_y**2 = TSS
+
+* (n-k-1) SER^2 = RSS
+
+* SSE = SSR = ESS
+  * https://canvas.harvard.edu/courses/138520/discussion_topics/1085306
+    * SSE = SSR
+  * https://en.wikipedia.org/wiki/Explained_sum_of_squares
+    * SSR = ESS
+      * First sentence
 
 
 # Förl 2
@@ -174,16 +225,32 @@ Skipped, slide 3, 4, 5, 7, 8, 9
 ### Confidence intervals
 * bar(Y_1) - bar(Y_2) +- t_val*sqrt(s^2_1/n_1 + s^2_2/n_2)
 
-### Sample covariance
+### Sample covariance and correlation
 * S_XY = (1/n-1) SUM(X_i - bar(X)(Y_i - bar(Y)))
+* r_XY = S_XY / S_X S_Y
+
+# Förl 6
+* OLS is based on the least squares solution
+
+## beta solutions
+* se formelblad
+
+## Meassures of Fit
+* R^2
+  * How much of the variance does the model explain
+
+* SER
+  * The magnitude of a typical regression residuals with the unit of Y
+
+## Assumptions
+* Skipped slide 21, 22, 23, 24, 25, 26
+
+# Förl 7
+## Bias of beta
+* Skipped, slide 4
+
+## Hypothesis testing on beta
 * 
-
-
-
-
-
-
-
 
 
 
