@@ -57,6 +57,9 @@
     - [Single variable in multivariatea](#single-variable-in-multivariatea)
     - [Joint hypothesis test](#joint-hypothesis-test-1)
     - [Testin gsingle restrictions on multiple coefficients](#testin-gsingle-restrictions-on-multiple-coefficients-1)
+  - [A lot of yadaa in the end](#a-lot-of-yadaa-in-the-end)
+- [Förl 11](#förl-11)
+- [Förl 12](#förl-12)
 
 
 
@@ -164,7 +167,7 @@ df = ...?
 ## Confidence interval
 ### bar(y)
 * CI = bar(Y) +- t_val*SE(bar(Y))
-  * SE(bar(Y)) = s/sqrt(n)
+  * SE(bar(Y)) = s_Y/sqrt(n)
   * t_val is from t-table
     * Note that t_val is for two sided test
 
@@ -220,6 +223,7 @@ of Y
 * (n-1) S_y**2 = TSS
 
 * (n-k-1) SER^2 = RSS
+  * k räknar inte intercept här :// enligt E4.1 
 
 * SSE = SSR = ESS
   * https://canvas.harvard.edu/courses/138520/discussion_topics/1085306
@@ -227,6 +231,8 @@ of Y
   * https://en.wikipedia.org/wiki/Explained_sum_of_squares
     * SSR = ESS
       * First sentence
+
+* SER gives RSS. RSS with R**2 gives TSS gives SD(Y) ergo s_Y
 
 ## Ideally worded interpretations
 * Linear univariate
@@ -247,10 +253,12 @@ of Y
 * E(XY) = E(X)E(Y) + Cov(X, Y) = [independence] E(X)E(Y)
 
 * var(X) = E(X - E(X)))**2 = E(X^2) - E(X)^2
-* var(ax+b) = a^2var(x
+* var(ax+b) = a^2var(x)
 * var(X + Y) = Var(X) + Var(Y) - 2Cov(X, Y)
 
 * SD(aX + bY) = sqrt(a^2SD(X)^2 + b^2SD(Y)^2 + 2abCov(X, Y)???
+* 
+* SE(X) = SD(X) / sqrt(n)
 
 * Skewness = E(X - E(X))^3/SD(X)^(3)
   * Positiv skewness betyder att det är mer data till vänster om medelvärdet
@@ -416,6 +424,7 @@ Skipped, whole lecture :)
 * Same as always
 * df = n - k - 1
 
+
 ### Joint hypothesis test
 * H_0: beta_1 = 0 and beta_2 = 0
 * H_A: beta_1 != 0 or beta_2 != 0
@@ -444,7 +453,13 @@ H_1: beta_1 != beta_2
 
 df = ...?
 
+## A lot of yadaa in the end
+slide 27 and forward skipped
+* Nothing of substance imo
 
+# Förl 11
+
+# Förl 12
 
 
 
