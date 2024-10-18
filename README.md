@@ -231,7 +231,7 @@ of Y
 ### Meassures of Fit relationships
 * TSS = ESS + RSS
 
-* (n-2) S_y**2 = TSS
+* (n-1) S_y**2 = TSS
 
 * (n-k-1) SER^2 = RSS
   * k räknar inte intercept här :// enligt E4.1 
