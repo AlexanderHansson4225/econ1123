@@ -164,6 +164,7 @@ From these we can find the SE and mean of beta_0 and beta_1
 * restricted:
   * the model under the null hypothesis
     * For instance if we are testing if two betas might be zero, we can exclude those terms
+    * To find the restricted SSR, s_y gives TSS is RSS since in this case the restricted model is only an intercept, so no variance is explained, i.e. TSS = SSR
 
 * In the homoskedastic case, F-stat is F_(q, inf)
   * q is the number of restriction under the null hypothesis.
@@ -230,7 +231,7 @@ of Y
 ### Meassures of Fit relationships
 * TSS = ESS + RSS
 
-* (n-1) S_y**2 = TSS
+* (n-2) S_y**2 = TSS
 
 * (n-k-1) SER^2 = RSS
   * k räknar inte intercept här :// enligt E4.1 

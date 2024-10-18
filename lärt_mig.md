@@ -28,3 +28,5 @@
       * (3.94 +- 2.58 0.31)
         * So for a 1.5 unit change: 1.5(3.94 +- 2.58 0.31)
   * GÖR OM DENNA FRÅGA
+
+* k does not include the intecept in the counting??????? OKLART
