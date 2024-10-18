@@ -1,3 +1,10 @@
+* Coeffidence interval ger för en one unit change.
+  * Om vi vill ha flera unit change, multiplicera med antal units
+
+* was there a statistically significant change n beta_1 compared to old beta_1?
+  * H0: beta_1 = old_beta_1
+  * Kan inte bara beta_1 = old_beta_1_värdet eftersom det finns osäkerhet i oldbeta värdet
+
 * p-value är altenativet till att använda kritiska värden
 
 * Discrete prob dist
@@ -29,4 +36,11 @@
         * So for a 1.5 unit change: 1.5(3.94 +- 2.58 0.31)
   * GÖR OM DENNA FRÅGA
 
+* Gör utan tvekan om 7.3
+
 * k does not include the intecept in the counting??????? OKLART
+  * k does not count intercept. Thats the minus one. 
+
+* F-statistic är det vi har fått ut från tester
+
+* 7.9 är väsentlig och RIKTIGT bra.

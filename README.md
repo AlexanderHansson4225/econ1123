@@ -10,9 +10,9 @@
     - [Two sided beta (both univaraite and multivariate)](#two-sided-beta-both-univaraite-and-multivariate)
     - [Difference in means](#difference-in-means)
     - [Joint hypothesis test](#joint-hypothesis-test)
+    - [Testin gsingle restrictions on multiple](#testin-gsingle-restrictions-on-multiple)
   - [p-value](#p-value)
     - [Two sided](#two-sided)
-    - [Testin gsingle restrictions on multiple coefficients](#testin-gsingle-restrictions-on-multiple-coefficients)
     - [THeyre all well statated in the formula sheet](#theyre-all-well-statated-in-the-formula-sheet)
   - [Confidence interval](#confidence-interval)
     - [bar(y)](#bary)
@@ -59,7 +59,7 @@
   - [Hypothesis test](#hypothesis-test-1)
     - [Single variable in multivariatea](#single-variable-in-multivariatea)
     - [Joint hypothesis test](#joint-hypothesis-test-1)
-    - [Testin gsingle restrictions on multiple coefficients](#testin-gsingle-restrictions-on-multiple-coefficients-1)
+    - [Testin gsingle restrictions on multiple coefficients](#testin-gsingle-restrictions-on-multiple-coefficients)
   - [A lot of yadaa in the end](#a-lot-of-yadaa-in-the-end)
 - [Förl 11](#förl-11)
 - [Förl 12](#förl-12)
@@ -79,6 +79,8 @@
 (X, Y)
 
 * SQRT(var(a*beta_3 + b*beta_4)) = sqrt(SE(a*beta_3)^2 + SE(b*beta_4)^2 + 2abcov(beta_3, beta_4))
+* var(a*beta_3 + b*beta_4) = SE(a*beta_3)^2 + SE(b*beta_4)^2 + 2abcov(beta_3, beta_4)
+* SE(aX + bY) = \sqrt(a^2 * SE(X)^2 + b^2 * SE(Y)^2 + 2abCov(X,Y))
 
 * Skewness = E(X - E(X))^3/SD(X)^(3)
   * Positiv skewness betyder att det är mer data till 
@@ -171,15 +173,25 @@ From these we can find the SE and mean of beta_0 and beta_1
   * not the the heteroskedastic cases
     * then the upper limit is df = n - k - 1 i beleive
 
+### Testin gsingle restrictions on multiple 
+coefficients
+H_0: beta_1 = beta_2
+H_1: beta_1 != beta_2
+- Make a difference test
+  - just make a normal test, seing beta_2 as a constnt even though is an estimate.
+
+* (beta_1 - beta_2)/SE(beta_1 - beta_2)
+
+* SE(beta_1 - beta_2)
+  * SE(aX + bY) = \sqrt(a^2 * SE(X)^2 + b^2 * SE(Y)^2 + 2abCov(X,Y))
+  * if beta_1 and beta_2 are tested independely, cov is 0****
+
+
 ## p-value
 ### Two sided
 2ZNORM(-abs(t_act)) and then compare this to the confidence level
 - literally the same as for critical t but we go one way but not the other
-### Testin gsingle restrictions on multiple coefficients
-H_0: beta_1 = beta_2
-H_1: beta_1 != beta_2
 
-df = ...?
 
 ### THeyre all well statated in the formula sheet
 

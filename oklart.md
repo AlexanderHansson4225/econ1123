@@ -1,4 +1,18 @@
+
+# Key stensäkre
+* k
+* q: Number of values in the hypothesis test that we are testng
+* number df
+* Log linear and linear log interpretation
+* Notation
+  * beta-0/se
+    * t^act
+  * critical t??
+* Flera saker i labbarna
+  * Derivata saken
+
 # Oklart
+
 * Ska vi ta absolutbeloppet av test statistic när den jämförs med kritiska värden, för one sided test?
 
 * I fråga 2 assignment 2, lös igen. Varför är TSS = SER eller något liknande? Vad det nu var.
