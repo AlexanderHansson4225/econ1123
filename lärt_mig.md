@@ -43,4 +43,18 @@
 
 * F-statistic är det vi har fått ut från tester
 
-* 7.9 är väsentlig och RIKTIGT bra.
+* 7.9 är väsentlig
+  * Men det är bara vad jag naturally gör. Lägg allt på en sid och testa Testin gsingle restrictions on multiple från README.md
+
+* ln(new) - ln(old) \approx (new-old)/old. ERGO we can apprixmate the difference between two ln as a procentage change. 
+
+* intercept does not count as a regressor
+
+* F-test är väldigt dependent på att du använder rätt tal
+
+
+* stat it as mu_a - mu_b = 0 inte mu_a = mu_b
+  * Bra men inte jätteviktigt 
+  * Min känsla på att man inte ska dela med root n här är rätt, men oklar varför
+
+* Stat. Indp. P(X and Y) = P(X)P(Y)

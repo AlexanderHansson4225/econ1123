@@ -20,7 +20,7 @@
   - [Measures of Fit and their relations](#measures-of-fit-and-their-relations)
     - [The variables](#the-variables)
     - [Meassures of Fit relationships](#meassures-of-fit-relationships)
-  - [Ideally worded interpretations](#ideally-worded-interpretations)
+  - [Ideal interpretations](#ideal-interpretations)
 - [Förl 2](#förl-2)
   - [Basics](#basics-1)
   - [Means](#means)
@@ -47,9 +47,10 @@
   - [Hypothesis testing on beta](#hypothesis-testing-on-beta)
   - [Confidence interval](#confidence-interval-2)
   - [Homo vs heteroskedaticity](#homo-vs-heteroskedaticity)
-  - [OLS assumptions](#ols-assumptions)
+  - [Homo and heteroskedality](#homo-and-heteroskedality)
 - [Förl 8](#förl-8)
   - [Omitted variable bias](#omitted-variable-bias)
+    - [Formula to see what](#formula-to-see-what)
   - [Multivariate model](#multivariate-model)
   - [Measures of fit](#measures-of-fit)
   - [Hypothesis test](#hypothesis-test)
@@ -99,6 +100,8 @@ svansen
 * S_XY = (1/n-1) SUM(X_i - bar(X)(Y_i - bar(Y)))
 * r_XY = S_XY / S_X S_Y
 * s_y^2 = SUM(Y_i - bar(Y))^2/(n-1)
+
+* Estimated Error Variance = variance of the error = SUM(u_i^2)/(N-2) = SER^2
 
 ## Binanry special case
 SE can be found:
@@ -248,7 +251,7 @@ of Y
 * (n-k-1) SER^2 = RSS
   * k räknar inte intercept här :// enligt E4.1 
 
-* SSE = SSR = ESS
+* SSE = SSR = RSS
   * https://canvas.harvard.edu/courses/138520/discussion_topics/1085306
     * SSE = SSR
   * https://en.wikipedia.org/wiki/Explained_sum_of_squares
@@ -257,7 +260,7 @@ of Y
 
 * SER gives RSS. RSS with R**2 gives TSS gives SD(Y) ergo s_Y
 
-## Ideally worded interpretations
+## Ideal interpretations
 * Linear univariate
   * Duh
 
@@ -268,6 +271,17 @@ of Y
 
 * Linear multivariate
   * Holding all other independent variables, a one unit change in x will on average lead to a beta_i increases in y
+
+* log-linear
+  * ln(Earnings) for females are, on average, 0.44 lower for men than for women.
+    * ja... men approximation would be nice.
+      * Tror det är, if one unit increse in th independent variable leads on verge to a beta % increase in dependent
+  
+* linear-log
+  * * a 1% increse in independet variable leads to a 0.01 beta increase in dependent
+
+* log-log
+  * a 1% increse in independet variable leads to a beta % increase in dependent
 
 
 
@@ -388,11 +402,23 @@ Skipped, slide 3, 4, 5, 7, 8, 9
   * The magnitude of a typical regression residuals with the unit of Y
 
 ## Assumptions
-* Skipped slide 21, 22, 23, 24, 25, 26
+1. E(u | X = x) = 0
+  * Error averge doesnt depend on X
+2. (X_i, Y_i) are idd
+  * i.e. collected from a simple random sampling
+  * Broken whn we record data from only one entity
+
+3. Large outlier are rare
+  * OLS are sensistive to these
+  * E(X^4) less than infinity 
+
 
 # Förl 7
 ## Bias of beta
-* Skipped, slide 4
+* E(hat(b)) = b (unbiased)
+* hat(b) -> b (consistent)
+  * Convergence as n -> oo
+
 
 ## Hypothesis testing on beta
 * H_0: beta = beta_0
@@ -416,12 +442,24 @@ Skipped, slide 3, 4, 5, 7, 8, 9
   * well... you can use the heteroskedastic formulas but that seems awfully unlikely to happen 
 
 
-## OLS assumptions
-* Skipped, slide 25
+## Homo and heteroskedality
+* Homoskedality: Var(u | X) = 0
+  * i.e. the variance of the error doesnt depend on X
+
 
 # Förl 8
 ## Omitted variable bias
-Skipped, slide 3, 4, 5, 6, 7, 8, 9
+For a variable to lead to OVB, the omitted variable Z must follow **both** of the following.
+1. Z needs to be a determinant f Y
+   1. I.E. Z is currently a part of u
+
+2. Corr(Z, X) != 0
+
+### Formula to see what 
+hat(b) -> b + (sigma_u/sigma_X) * rho_(X,u)
+
+* a meassurment of how biased that hat(b) is compared to b
+
 
 ## Multivariate model
 Y = ...

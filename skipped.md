@@ -4,3 +4,6 @@ p-value. verkar bara vara att om vi har n stor mängd av värden kan vi kolla P(
 * Först varöf  assignmn b de kunde h gjort den förenklignen. Är den generell?
   * In the event that the explained sum of squares is zero, then we know that TSS = SSE.
   * Men även mer till det
+
+* dskussonfrågor i slides
+  * Inklusve de på proven
