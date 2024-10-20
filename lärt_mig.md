@@ -38,9 +38,8 @@
 
 * Gör utan tvekan om 7.3
 
-* k does not include the intecept in the counting??????? OKLART
-  * k does not count intercept. Thats the minus one. 
-
+* k does not include the intecept in the 
+  
 * F-statistic är det vi har fått ut från tester
 
 * 7.9 är väsentlig

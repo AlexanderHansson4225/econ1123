@@ -26,3 +26,6 @@ Skriv alltid ut hypotestester, även om de inte frågar om det. Tvingar dig se o
   - RSS = 0 <=> R^2 <=> all except beta_0 noll
 
 - Tänk på om confidence intervall inte kan ha negative values exempelvist.
+
+- Confidence interval ger en unit change
+  - Flera unit: Multiplicera resultatet
