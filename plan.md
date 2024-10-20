@@ -17,5 +17,15 @@
 
 * Vad står allt för?
 
-* NU: ASSUMPTION AND OVB
-* SEDAN: KOM IHÅG ALLT
+
+* NU: KOM IHÅG ALLT
+* Testa multiple choice.
+* 
+* Frågorna med "CHANGE"
+  * **Gör de 1 labbfrågorna när jag tröttnar'**
+    * **Plug föreläsning när hn nämnde before and after**
+  * Minnas.
+  * En heteroskedastic F-test. Diskutera med Philip
+  * Frågan till Philip
+  * OVB frågan
+* SIST: SEDAN: FÖRL 11 och 12. && MULTIPLE CHOICE, Bias frågorna i bok och multiple eller tenta

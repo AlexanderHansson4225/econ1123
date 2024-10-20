@@ -53,8 +53,24 @@
 * F-test är väldigt dependent på att du använder rätt tal
 
 
-* stat it as mu_a - mu_b = 0 inte mu_a = mu_b
+* state it as mu_a - mu_b = 0 inte mu_a = mu_b
   * Bra men inte jätteviktigt 
   * Min känsla på att man inte ska dela med root n här är rätt, men oklar varför
 
 * Stat. Indp. P(X and Y) = P(X)P(Y)
+
+* Sample correlation is not consisten
+
+* Correlation = S_XY / (S_X S_Y)
+  * OFC för det är ju den som är standardiserad
+    * Den som står vi beta more or less
+
+* Before and after is used when analyzing how a unit change in X, changes Y
+  * "What is the predicted change in test scores associated with a change in district income of $1000, based on the estimated quadratic regression function in Equation (8.2)?"
+
+
+* Why is E(u_i|X) = 0 in our model?
+  * Because u_i is independent on X. 
+  * E(u_i | X) = E(u_i)
+    * Therefore we also require that E(u_i) = 0
+      * and since u_i represents devitons frm the averge, this essentally always the cse.

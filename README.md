@@ -51,10 +51,14 @@
 - [Förl 8](#förl-8)
   - [Omitted variable bias](#omitted-variable-bias)
     - [Formula to see what](#formula-to-see-what)
+    - [Overcomming bias](#overcomming-bias)
   - [Multivariate model](#multivariate-model)
   - [Measures of fit](#measures-of-fit)
   - [Hypothesis test](#hypothesis-test)
 - [Förl 9](#förl-9)
+  - [Multivariate OLS assumptins](#multivariate-ols-assumptins)
+  - [Imperefect multicollinearity](#imperefect-multicollinearity)
+  - [Consistent and unbiased](#consistent-and-unbiased)
   - [Omitted variable bias](#omitted-variable-bias-1)
 - [Förl 10](#förl-10)
   - [Hypothesis test](#hypothesis-test-1)
@@ -69,12 +73,18 @@
 
 # Lecture content couples by topics
 ## Basics
+* P(X = x givet Y = y) = P(X = x, Y = y)/P(Y = y)
+
+* P(Y) = SUM(p(x)p(Y givet x))
+
 * E(XY) = E(X)E(Y) + Cov(X, Y) = [independence] E(X)E
 (Y)
 
+* P(X and Y) = P(X)P(Y)
+
 * var(X) = E(X - E(X)))**2 = E(X^2) - E(X)^2
 * var(ax+b) = a^2var(x
-* var(X + Y) = Var(X) + Var(Y) - 2Cov(X, Y)
+* var(X + Y) = Var(X) + Var(Y) + 2Cov(X, Y)
 
 * SD(aX + bY) = sqrt(a^2SD(X)^2 + b^2SD(Y)^2 + 2abCov
 (X, Y)
@@ -251,12 +261,7 @@ of Y
 * (n-k-1) SER^2 = RSS
   * k räknar inte intercept här :// enligt E4.1 
 
-* SSE = SSR = RSS
-  * https://canvas.harvard.edu/courses/138520/discussion_topics/1085306
-    * SSE = SSR
-  * https://en.wikipedia.org/wiki/Explained_sum_of_squares
-    * SSR = ESS
-      * First sentence
+* SSE = SSR = RSS != ESS
 
 * SER gives RSS. RSS with R**2 gives TSS gives SD(Y) ergo s_Y
 
@@ -460,6 +465,11 @@ hat(b) -> b + (sigma_u/sigma_X) * rho_(X,u)
 
 * a meassurment of how biased that hat(b) is compared to b
 
+### Overcomming bias
+1. Include Z
+2. Remove Corr(X, u) != 0 in the tests by randomly assigning kids bad at english into classes of varying sizes
+3. Remove the dependence of Y on Z in the testing.
+
 
 ## Multivariate model
 Y = ...
@@ -476,8 +486,32 @@ TODO. See lab
 
 
 # Förl 9
+## Multivariate OLS assumptins
+1. Same as univariate
+   1. E(u_i | X_1, ..., X_m) = 0
+   2. (X_1i, ..., X_mi, Y_i) are idd
+   3. Outliers are rare E(X_ji^4) less than infinity
+2. No perfect multicollineariy
+   1. When one regressor is a perfect linear function of another regressor
+   2. Will be the case if we have male and female and constant as regressors
+      1. Dummy variable trap
+
+## Imperefect multicollinearity
+When two or more variables are highly correlated
+  * atleast one of the variables will be imperfectly estimated
+  * The idea: the coefficient on X 1 is the effect of X 1 holding
+    X 2 constant; but if X 1 and X 2 are highly correlated, there is
+    very little variation in X 1 once X 2 is held constant – so the
+    data don’t contain much information about what happens
+    when X 1 changes but X 2 doesn’t. If so, the variance of the
+    OLS estimator of the coefficient on X 1 will be large.
+  
+## Consistent and unbiased
+* Same as univariate
 ## Omitted variable bias
-Skipped, whole lecture :)
+* Same as univariate
+* 
+
 
 # Förl 10
 ## Hypothesis test
