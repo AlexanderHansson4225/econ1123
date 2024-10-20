@@ -1,4 +1,6 @@
 
+# SSE = SSR = RSS != ESS
+
 # Key stensäkre
 * k
 * q: Number of values in the hypothesis test that we are testng
@@ -14,11 +16,6 @@
 # Oklart
 
 * Ska vi ta absolutbeloppet av test statistic när den jämförs med kritiska värden, för one sided test?
-
-* I fråga 2 assignment 2, lös igen. Varför är TSS = SER eller något liknande? Vad det nu var.
-
-* How to deduce t-statistic from N(0,1)
-     * Varför har de ej gett oss t tabell?
 
 * 3.5. size? power? what?
 
@@ -39,6 +36,9 @@
 * MIDTERM 
 * Q4 MULIPLE CHOICE
 * Q6
+
+HOW IS POWER OF A TEST CALCULATED?
+- gör en sådn fråg.
 
 
 
